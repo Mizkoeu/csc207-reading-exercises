@@ -1,0 +1,16 @@
+Solve the following recurrence, slightly modified from the reading:
+T(0) = 0
+T(n) = 1 + T(n − 2)
+and give big-O bound on the behavior of T. In your analysis, assume that n is even and n ≥ 2.Follow the outline of the proof in the reading as a guide. Does your big-O bound change if, instead of subtracting 1 or 2, you subtract any constant k (assuming n ≥ k and k divides n evenly)?
+
+1. First, expand the recurrence a few steps to get a feel:
+T(n) = 1 + T(n - 2) = 2 + T(n - 4) = 3  + T(n - 6)= ...
+
+2. Now we can rewrite T(n - 2) in terms of the number of unfoldings/expansions:
+T(n) = k + T(n - 2k)
+
+3. Finally, we note that the base case of our recursion is when n = 0. So we consider the case where the recursive call in the formula above results in the base case. This is when n = 2k so T(n − 2k) = T(n − n) = T(0). Plugging in for k gives us an explicit formula for the overall
+recurrence:
+T(n) = k + T(n - 2k) = n/2 + T(n - n) = n/2 + T(0) = n/2
+
+Thus the explicit formula for this recursive procedure is T(n) = n/2, where n is positive even integer. In terms of Big-O, we can say that T \in O(n).
