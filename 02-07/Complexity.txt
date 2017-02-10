@@ -23,14 +23,14 @@ Critical Operations to count:
 
 Worst case scenario: 
 T(n) = 2n
-O(n) = n
+\in {O(n)}
 The max integer is located at the end of the input array and the input array is in ascending
 order. So the comparison and assignment operations must be performed throughout the for-loop, 
 which is n times. In sum, that's 2n in counting. 
 
 Best case scenario:
 T(n) = n + 1
-O(n) = n
+\in {O(n)}
 The maximum integer is located at the very beginning of the input array. So the critical 
 operation of assigning value to ret is carried out exactly once. However, since the function 
 does not return in the loop, the comparison operation is still performed over the entire loop,
@@ -38,7 +38,7 @@ which is n times. In sum, that's n+1 times.
 
 Average case:
 T(n) = 5n/4
-O(n) = n 
+\in {O(n)} 
 On average, we expect the max integer to be around the center of the input array, which is 
 located at n/2. However, the ascending/descending order of the array poses complication to the
 average case analysis. Here we can simplify the problem by assuming that the array has alternating
