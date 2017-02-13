@@ -1,0 +1,35 @@
+Exercise (Stack-and-Heap Tracing) Consider the following code that utilizes the Counter class:
+
+public class Program {
+
+   public void doWork(Counter c) {
+	c.increment();
+	c = new Counter();
+    	// Point A
+   	c.increment();
+	c.increment();
+}
+   public static void main(String[] args) {
+       	Counter c = new Counter();
+	doWork(c);
+	// Point B
+   }
+}
+1. Give a stack-and-heap diagram describing the state of memory at /* Point A */ in the code above.
+
+ Stack           Heap
+-------        --------
+c [  ]--------> Counter <----|
+     	    -->	value [ 1 ]  | 
+	    |     	     |
+-- doWork   |	      	     |
+c [  ]------|		     |
+c [  ]--------> Counter      |
+		value [ 0 ]  |	
+-- increment	      	     |
+this [ ]---------------------|      
+ 
+
+
+2. What is the value of c’s value field at /* Point B */ ?
+The value is 1.
