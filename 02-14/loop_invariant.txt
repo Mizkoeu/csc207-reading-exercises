@@ -1,0 +1,21 @@
+Exercise (Loop Invariant Verification)
+Consider the following implementation of the max function:
+public static int max(int[] arr) {
+       int ret = arr[0];
+       for (int i = 1; i < arr.length; i++) {
+       if (arr[i] < ret) {
+       	  ret = arr[i];
+	  }
+	}
+	return ret;
+}
+
+Give an appropriate loop invariant for max in terms of ret that implies the correctness of the max
+function if it holds. Does the max function enforce this loop invariant properly?
+
+An appropriate loop invariant for max in this case is the int variable ret. ret contains the largest
+int value in arr that we have seen so far (in the loop). This max function does not enforce this 
+loop invariant properly. In fact, it reverses the comparison operator and assigns the minimum value
+to ret. To correct this, we need to change the comparison in the loop to (arr[i] < ret). On a side 
+note, it is best if the author of the function renames the variable ret as max to make the code 
+more sensible to readers/users. 
