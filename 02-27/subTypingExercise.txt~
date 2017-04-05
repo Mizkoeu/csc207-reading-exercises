@@ -1,0 +1,17 @@
+Exercise (Subtyping as Approximation) Consider the following interface and class declarations:
+public interface I { public void foo(); }
+public class C implements I {
+public void foo() { System.out.println("C.foo"); }
+public void bar() { System.out.println("C.bar"); }
+}
+And consider the following code snippet:
+I i = new C();
+i.foo(); // (A)
+i.bar(); // (B)
+
+For lines (A) and (B) above, answer the following questions:
+1. Does the line of code type check?
+(A) does type checking, and since foo() function exists in the interface I and had concrete implementation in class C, line (A) runs without any issue.
+(B) also does type checking. Since bar() function does not exist in the interface I, even though the class C has  bar() implementation, the code is not going to
+
+2. If so, what is the output?
