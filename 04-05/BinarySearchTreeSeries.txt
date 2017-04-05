@@ -1,0 +1,49 @@
+(a)      5
+        / \
+       /   \
+      2     8
+     / \   / \
+    1   4  6  9
+
+   add(root, 5)
+   add(root.left, 2)
+   add(root.left.left, 1)
+   add(root.left.right, 4)
+   add(root.right, 8)
+   add(root.right.left, 6)
+   add(root.right.right, 9)
+
+(b)       4
+         / \
+        /   \
+       2     9
+            / \
+           /   \
+          6    15
+         /       \
+        5        20
+
+add(root, 4)
+add(root.left, 2)
+add(root.right, 9)
+add(root.right.left, 6)
+add(root.right.left.left, 5)
+add(root.right.right, 25)
+add(root.right.right.right, 20)
+
+(b)        9
+          /
+         6
+        /
+       5
+      /
+     2
+    /
+   1
+
+add(root, 9)
+add(root.left, 6)
+add(root.left.left, 5)	
+add(root.left.left.left, 2)
+add(root.left.left.left.left, 1)	 	
+   
